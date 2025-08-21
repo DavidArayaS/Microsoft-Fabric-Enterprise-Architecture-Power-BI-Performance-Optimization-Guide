@@ -6,7 +6,7 @@ This section outlines key architectural decisions for deploying and managing Mic
 
 ### 1.1 Capacity Planning
 
-- Choose a Fabric SKU that aligns with your expected data and analytics needs (e.g., F8–F64 for production-grade usage).
+- Choose a Fabric SKU that aligns with your expected data and analytics needs (e.g., F64–F128 for production-grade usage).
 - As the organization grows and analytics adoption increases, **capacity needs will also increase**.
 - Plan for **scaling out** across multiple capacities when:
   - Workloads require isolation (e.g., Power BI vs Spark)
@@ -19,7 +19,7 @@ This section outlines key architectural decisions for deploying and managing Mic
 
 ### 1.2 Workload Segregation
 
-- Allocate **dedicated capacities for specific workload types** to avoid resource contention:
+- Allocate **dedicated capacities for specific workload types** to avoid resource contention **when it makes sense**:
   - Power BI (semantic models, reports, dashboards)
   - Data Engineering (Spark, Lakehouses, Notebooks)
   - Real-Time Analytics (KQL, streaming jobs)
@@ -50,7 +50,20 @@ This layered approach enables data quality assurance and versioning **within the
 
 ---
 
-### 1.5 Governance and Platform Features
+### 1.5 Notebook Optimization (Spark)
+
+Notebooks in Fabric run on Spark compute and consume capacity. To avoid performance issues:
+
+- Minimize full scans and joins across large datasets
+- Use caching and partitioning wisely to optimize memory and execution time
+- Structure notebooks into logical, modular steps (e.g., ingestion, transformation, validation)
+- Monitor Spark job performance using Fabric’s execution details panel
+
+Properly optimized notebooks help ensure Spark workloads do not interfere with concurrent Power BI or real-time operations.
+
+---
+
+### 1.6 Governance and Platform Features
 
 - Apply role-based access control (RBAC) at the workspace and Lakehouse item levels.
 - Use Fabric's **Surge Protection** feature to manage and throttle background operations (e.g., dataset refreshes) during capacity pressure:
@@ -128,6 +141,7 @@ Run these notebooks directly in Fabric to generate actionable diagnostics.
 | Workload Management      | Use separate capacities for Spark, BI, and Real-Time workloads                  |
 | Workspace Strategy       | Organize by business domain; separate data engineering and BI workloads         |
 | Lakehouse Architecture   | Implement Medallion pattern to enforce data quality and simplify lifecycle      |
+| Notebook Optimization    | Apply Spark notebook best practices to reduce contention and resource usage     |
 | Power BI Optimization    | Use Metrics App, Desktop Analyzer, and Fabric notebooks to optimize performance|
 | Surge Protection         | Consider enabling for background task throttling during peak times             |
 | Auto-scaling             | Not available — monitor and scale manually based on growth                      |
@@ -135,4 +149,3 @@ Run these notebooks directly in Fabric to generate actionable diagnostics.
 ---
 
 > Continuous performance optimization in Fabric starts with architecture. Design with scalability, workload isolation, and observability from the start.
-
