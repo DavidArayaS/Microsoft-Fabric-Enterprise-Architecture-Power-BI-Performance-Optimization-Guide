@@ -90,6 +90,7 @@ Start by identifying which reports, datasets, and users are consuming the most c
 
 > [Install the Metrics App](https://learn.microsoft.com/es-es/fabric/enterprise/metrics-app)
 
+![alt text](https://github.com/DavidArayaS/Microsoft-Fabric-Enterprise-Architecture-Power-BI-Performance-Optimization-Guide/blob/97b2404b9e1f9f990ebb80fc18d5f87309df16b2/Pictures/%7BB1B9A143-A3B2-4AE2-87C7-36841FC48D31%7D.png)
 ---
 
 ### Step 2: Identify High-Impact Reports
@@ -111,7 +112,7 @@ This tool allows you to inspect:
 
 > [Using Performance Analyzer in Power BI Desktop](https://learn.microsoft.com/es-es/power-bi/create-reports/desktop-performance-analyzer)
 >
-> ![alt text](https://github.com/DavidArayaS/Microsoft-Fabric-Enterprise-Architecture-Power-BI-Performance-Optimization-Guide/blob/13d7067443274fbccf456d335ecb81471c04bc9e/Fabric%20Performance/performance%20analyzer.jpg)
+> ![alt text](https://github.com/DavidArayaS/Microsoft-Fabric-Enterprise-Architecture-Power-BI-Performance-Optimization-Guide/blob/97b2404b9e1f9f990ebb80fc18d5f87309df16b2/Pictures/%7B2BB35744-A81D-4A74-8DFF-8F61A0F111C7%7D.png)
 
 ---
 
@@ -126,14 +127,10 @@ After identifying bottlenecks:
   - Compression and storage distribution
 
 Run these notebooks directly in Fabric to generate actionable diagnostics.
+![alt text](https://github.com/DavidArayaS/Microsoft-Fabric-Enterprise-Architecture-Power-BI-Performance-Optimization-Guide/blob/97b2404b9e1f9f990ebb80fc18d5f87309df16b2/Pictures/%7B48CEABC2-E26D-46AB-BB59-A976C4BA0172%7D.png)
 
-> Suggested image placeholders:
-- `img/bpa-overview.png`
-- `img/memory-analysis-summary.png`
-- `img/model-issues.png`
-- `img/actions-taken.png`
-
----
+![alt text](https://github.com/DavidArayaS/Microsoft-Fabric-Enterprise-Architecture-Power-BI-Performance-Optimization-Guide/blob/97b2404b9e1f9f990ebb80fc18d5f87309df16b2/Pictures/%7B79575542-3886-456E-8F68-14AD06271658%7D.png)
+![alt text](https://github.com/DavidArayaS/Microsoft-Fabric-Enterprise-Architecture-Power-BI-Performance-Optimization-Guide/blob/97b2404b9e1f9f990ebb80fc18d5f87309df16b2/Pictures/%7B96605045-6E95-4B73-A7FA-AECC1EDBA547%7D.png)
 
 ## Summary
 
