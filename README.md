@@ -110,6 +110,8 @@ This tool allows you to inspect:
 - Other processing and interaction delays
 
 > [Using Performance Analyzer in Power BI Desktop](https://learn.microsoft.com/es-es/power-bi/create-reports/desktop-performance-analyzer)
+>
+> ![alt text](https://github.com/DavidArayaS/Microsoft-Fabric-Enterprise-Architecture-Power-BI-Performance-Optimization-Guide/blob/13d7067443274fbccf456d335ecb81471c04bc9e/Fabric%20Performance/performance%20analyzer.jpg)
 
 ---
 
