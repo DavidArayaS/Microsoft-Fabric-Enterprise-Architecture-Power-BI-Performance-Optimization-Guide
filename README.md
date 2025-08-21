@@ -46,8 +46,6 @@ This section outlines key architectural decisions for deploying and managing Mic
   - **Silver**: Cleaned, conformed, and validated data
   - **Gold**: Business-ready, aggregated, and analytical data
 
-This layered approach enables data quality assurance and versioning **within the same workspace**, reducing the need for Dev/Test/Prod workspace separation.
-
 ---
 
 ### 1.5 Notebook Optimization (Spark)
