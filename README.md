@@ -61,7 +61,24 @@ Properly optimized notebooks help ensure Spark workloads do not interfere with c
 
 ---
 
-### 1.6 Governance and Platform Features
+### 1.6 Native Execution Engine (Spark)
+
+Microsoft Fabric includes a **Native Execution Engine (NEE)** for Spark that optimizes query execution by offloading supported Spark SQL operations to a vectorized, native engine.
+
+- Prefer **Spark SQL–based transformations** where possible to benefit from NEE optimizations.
+- NEE is most effective for:
+  - Large-scale scans
+  - Filters and projections
+  - Aggregations and joins on structured data
+- Avoid unnecessary Python or Scala UDFs in performance-critical paths, as they may bypass native execution.
+- Validate NEE usage through execution details and query plans when optimizing high-impact workloads.
+
+Using the Native Execution Engine helps reduce CPU consumption, improve query performance, and lower overall capacity usage, especially in Lakehouse-based transformations.
+
+
+---
+
+### 1.7 Governance and Platform Features
 
 - Apply role-based access control (RBAC) at the workspace and Lakehouse item levels.
 - Use Fabric's **Surge Protection** feature to manage and throttle background operations (e.g., dataset refreshes) during capacity pressure:
